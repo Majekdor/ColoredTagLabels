@@ -15,6 +15,16 @@ public struct ColoredTagLabel: View {
     let color: String?
     var sfSymbol: String?
     
+    public init(
+        label: String,
+        color: String?,
+        sfSymbol: String? = nil
+    ) {
+        self.label = label
+        self.color = color
+        self.sfSymbol = sfSymbol
+    }
+    
     public var body: some View {
         if #available(iOS 26.0, *) {
             tagLabel
