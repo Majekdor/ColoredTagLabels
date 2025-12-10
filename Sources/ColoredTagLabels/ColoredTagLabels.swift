@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ColoredTagLabel: View {
+public struct ColoredTagLabel: View {
     
     @Environment(\.colorScheme) private var colorScheme
     
@@ -15,7 +15,7 @@ struct ColoredTagLabel: View {
     let color: String?
     var sfSymbol: String?
     
-    var body: some View {
+    public var body: some View {
         if #available(iOS 26.0, *) {
             tagLabel
                 .glassEffect(.regular.tint(backgroundColor).interactive(), in: .capsule)
