@@ -14,15 +14,21 @@ public struct ColoredTagLabel: View {
     let label: String
     let color: String?
     var sfSymbol: String?
+    var labelFont: Font
+    var symbolFont: Font
     
     public init(
         label: String,
         color: String?,
-        sfSymbol: String? = nil
+        sfSymbol: String? = nil,
+        labelFont: Font = .callout,
+        symbolFont: Font = .footnote
     ) {
         self.label = label
         self.color = color
         self.sfSymbol = sfSymbol
+        self.labelFont = labelFont
+        self.symbolFont = symbolFont
     }
     
     public var body: some View {
@@ -47,11 +53,11 @@ public struct ColoredTagLabel: View {
         HStack {
             if let sfSymbol {
                 Image(systemName: sfSymbol)
-                    .font(.footnote)
+                    .font(symbolFont)
             }
             
             Text(label)
-                .font(.callout)
+                .font(labelFont)
         }
         .foregroundStyle(foregroundColor)
         .padding(.all, 6)
