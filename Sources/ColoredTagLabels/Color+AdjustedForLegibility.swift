@@ -11,7 +11,7 @@ extension Color {
     
     /// Ensures at least a 4.5:1 contrast against white (Light Mode)
     /// or black (Dark Mode), by iteratively tweaking brightness.
-    func adjustedForLegibility() -> Color {
+    public func adjustedForLegibility() -> Color {
         let kMinContrast: CGFloat = 4.5
         let kStep: CGFloat = 0.1  // brightness adjustment granularity
         
