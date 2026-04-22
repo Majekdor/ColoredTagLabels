@@ -56,8 +56,10 @@ public struct ColoredTagLabel: View {
                     .font(symbolFont)
             }
             
-            Text(label)
-                .font(labelFont)
+            if !label.isEmpty {
+                Text(label)
+                    .font(labelFont)
+            }
         }
         .foregroundStyle(foregroundColor)
         .padding(.all, 6)
